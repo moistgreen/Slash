@@ -1,0 +1,1 @@
+#macro LAYER_COLLISION "Collision"
