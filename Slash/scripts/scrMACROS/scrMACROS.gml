@@ -1,1 +1,0 @@
-#macro LAYER_COLLISION layer_tilemap_get_id("Collision")

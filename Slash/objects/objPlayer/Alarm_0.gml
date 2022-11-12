@@ -1,2 +1,0 @@
-///@desc Jumping
-jumping = false;
