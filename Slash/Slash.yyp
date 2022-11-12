@@ -5,8 +5,11 @@
   "resources": [
     {"id":{"name":"rmRoom1","path":"rooms/rmRoom1/rmRoom1.yy",},"order":1,},
     {"id":{"name":"sprPlayer","path":"sprites/sprPlayer/sprPlayer.yy",},"order":0,},
+    {"id":{"name":"scrStateFree","path":"scripts/scrStateFree/scrStateFree.yy",},"order":0,},
+    {"id":{"name":"sprCursorTest","path":"sprites/sprCursorTest/sprCursorTest.yy",},"order":5,},
     {"id":{"name":"objInit","path":"objects/objInit/objInit.yy",},"order":1,},
     {"id":{"name":"scrMACROS","path":"scripts/scrMACROS/scrMACROS.yy",},"order":2,},
+    {"id":{"name":"scrStateFroze","path":"scripts/scrStateFroze/scrStateFroze.yy",},"order":1,},
     {"id":{"name":"tile_meeting","path":"scripts/tile_meeting/tile_meeting.yy",},"order":1,},
     {"id":{"name":"objCollisionTest","path":"objects/objCollisionTest/objCollisionTest.yy",},"order":2,},
     {"id":{"name":"draw_set_text_alignment","path":"scripts/draw_set_text_alignment/draw_set_text_alignment.yy",},"order":0,},
@@ -52,6 +55,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Extra functions","folderPath":"folders/Scripts/Extra functions.yy","order":1,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Player","folderPath":"folders/Sprites/Player.yy","order":2,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Utility","folderPath":"folders/Sprites/Utility.yy","order":4,},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"State machine","folderPath":"folders/Scripts/State machine.yy","order":3,},
   ],
   "AudioGroups": [
     {"resourceType":"GMAudioGroup","resourceVersion":"1.3","name":"audiogroup_default","targets":-1,},

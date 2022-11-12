@@ -1,28 +1,13 @@
-// Updates key inputs
-key_right = keyboard_check(ord("D"));
-key_left = keyboard_check(ord("A"));
-dir = key_right - key_left;
 
-// Horizontal collision
-hSpeed = spd*dir;
-againstWall = false;
-if (tile_meeting(x + hSpeed, y, LAYER_COLLISION)) {	
-	while(!tile_meeting(x+sign(hSpeed), y, LAYER_COLLISION)) {
-		x += sign(hSpeed);	
-	}
-	hSpeed = 0;
-	againstWall = true;
+if (keyboard_check_pressed(vk_control)) {
+	if (state == stateFree)
+		state = stateFroze
+		
+	else if (state == stateFroze)
+		state = stateFree
 }
-x += hSpeed;
 
-// Vertical collision
-vSpeed += grav;
-onGround = false;
-if (tile_meeting(x, y + vSpeed, LAYER_COLLISION)) {	
-	while(!tile_meeting(x, y+sign(vSpeed), LAYER_COLLISION)) {
-		y += sign(vSpeed);	
-	}
-	vSpeed = 0;
-	onGround = true;
-}
-y += vSpeed;
+xx = tilemap_get_cell_x_at_pixel(tilemap, mouse_x, mouse_y)
+yy = tilemap_get_cell_y_at_pixel(tilemap, mouse_x, mouse_y)
+
+state()
