@@ -17,7 +17,12 @@ jumping = false;
 canJump = false;
 finishedAttackSequence = false;
 
+// Arrays
+hitList = [];
+
 // Initialize
 state = stateIdle;
 attacks = 0;
+
+
 

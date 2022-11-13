@@ -73,5 +73,12 @@ function stateIdle() {
 		state = stateAttack;
 	}
 	
+	// Special
+	else if (mouse_right) {
+		image_index = 0;
+		sprite_index = sprPlayerSpecial;
+		state = stateSpecial;
+	}
+	
 	#endregion
 }
