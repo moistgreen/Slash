@@ -43,6 +43,10 @@ function stateJump() {
 	#region ANIMATION
 	
 	// Animation handling
+	if (dir != 0)
+		image_xscale = dir;
+	
+	
 	if (vSpeed < 0)
 		sprite_index = sprPlayerJumpUp
 	else if (vSpeed > 0) {

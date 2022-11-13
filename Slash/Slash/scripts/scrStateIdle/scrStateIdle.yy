@@ -6,6 +6,6 @@
   "isCompatibility": false,
   "parent": {
     "name": "State machine",
-    "path": "folders/Rooms/State machine.yy",
+    "path": "folders/Scripts/State machine.yy",
   },
 }

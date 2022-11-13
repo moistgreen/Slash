@@ -1,0 +1,4 @@
+
+
+handleDamage(true);
+checkDamage();

@@ -1,50 +1,72 @@
 function stateAttack() {
 	
+	
+	// Ground attacks
 	if (onGround) {
+		
+		// So we know that our attack sequence finished
 		if (image_index >= image_number-1) {
-			finishedAttackSequence = true;
-			
+			finishedAttackSequence = true;	
 		}
 			
+		// Destroys hit check object after use
 		if (instance_exists(objHitCheck)) {
-			instance_destroy(objHitCheck)
+			//instance_destroy(objHitCheck)
+
 		}
-		if (sprite_index == sprPlayerAttack1 and image_index >= 3 and image_index <= 5 and !instance_exists(objHitCheck)) {
-			with(instance_create_depth(x, y, -99, objHitCheck)) {
-				image_xscale = other.image_xscale;
-				sprite_index = sprHitCheckAttack1;
-				damage = 1;
-				knockback = 20;
-				var _idArr = instance_place_array(x, y, objEnemy)
-				
-				for (var _i = 0; _i < array_length(_idArr); _i++) {
-					var _tar = _idArr[_i]
-					if (array_find_index(other.hitList, _tar) == -1) {
-						show_message("Hit " + string(_tar))
-						array_push(other.hitList, _tar);
-					}
-				}
-			}
-		}
-			// Combos
-		// Switch to attack 2
+		
+		// Attack 1
+		if (sprite_index == sprPlayerAttack1)
+			attack(sprPlayerAttack1, 2, 1, 1, 5, 7);
+		
+		// Attack 2 combo hint
 		if (sprite_index == sprPlayerAttack1 and image_index >= 5 and image_index <= 7)
 			instance_create_depth(x, y - 16, -99, objComboHint)
-			
+		
+		// Switch to attack 2
 		if (mouse_left and sprite_index == sprPlayerAttack1 and image_index >= 5 and image_index <= 7) {
 			image_index = 0;
 			sprite_index = sprPlayerAttack2;
+			onAttack2 = true;
 			hitList = [];
 		}
-	
-		// Switch to attack 3
-		if (sprite_index == sprPlayerAttack2 and image_index >= 9 and image_index <= 11)
-			instance_create_depth(x, y - 16, -99, objComboHint)
+		
+		// Repeats attack 2 for full animation
+		if (onAttack2) {
 			
+			
+		//
+		attack(sprPlayerAttack2, 1, 2, 1, 3, 4);
+				
+		attack(sprPlayerAttack2, 2, 2, 2, 5, 6);
+				
+		attack(sprPlayerAttack2, 3, 2, 3, 6, 7);
+				
+		attack(sprPlayerAttack2, 4, 2, 4, 7, 8);
+			
+			if (image_index >= image_number -1 or mouse_left and sprite_index == sprPlayerAttack2 and image_index >= 9 and image_index <= 11) {
+				onAttack2 = false;
+			}
+		}
+	
+		// Attack 3 combo hint
+		if (sprite_index == sprPlayerAttack2 and image_index >= 10 and image_index <= 12)
+			instance_create_depth(x, y - 16, -99, objComboHint)
+		
+		// Switch to attack 3
 		if (mouse_left and sprite_index == sprPlayerAttack2 and image_index >= 9 and image_index <= 11) {
 			image_index = 0;
 			sprite_index = sprPlayerAttack3;	
 			hitList = [];
+			onAttack3 = true;
+		}
+		
+		if (onAttack3) {
+			attack(sprPlayerAttack3, 4, 3, 1, 4, 5);
+			
+			if (image_index >= image_number -1) {
+				onAttack3 = false;
+			}
 		}
 	
 		// End attack
@@ -62,11 +84,22 @@ function stateAttack() {
 		if (attacks < airAttacksMax) {
 			sprite_index = sprPlayerAttackAir;
 			vSpeed = 0;
+			onAttackAir = true;
+			hitList = [];
+		}
+		
+		if (onAttackAir) {
+			attack(sprPlayerAttackAir, 2, 5, 1, 4, 5)
+			
+			if (image_index >= image_number -1) {
+				onAttackAir = false;
+			}
 		}
 		attacks++;
 		if (image_index >= image_number-1) {
 			sprite_index = sprPlayerJumpDown;
 			state = stateFalling;
+			hitList = [];
 			exit;
 		}
 	}

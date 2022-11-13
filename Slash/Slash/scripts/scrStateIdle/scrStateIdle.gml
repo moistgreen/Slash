@@ -76,7 +76,7 @@ function stateIdle() {
 	// Special
 	else if (mouse_right) {
 		image_index = 0;
-		sprite_index = sprPlayerSpecial;
+		sprite_index = sprPlayerAttackSpecial;
 		state = stateSpecial;
 	}
 	
