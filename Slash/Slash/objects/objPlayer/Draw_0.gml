@@ -1,9 +1,9 @@
 draw_self();
-draw_set_text_alignment(fa_center_middle)
-draw_text(x, y-64, "onGround = " + string(onGround));
-draw_text(x, y-96, "canJump = " + string(canJump));
-draw_text(x, y-128, "State = " + string(state));
-draw_text(x, y-160, "vSpeed = " + string(vSpeed));
+//draw_set_text_alignment(fa_center_middle)
+//draw_text(x, y-64, "onGround = " + string(onGround));
+//draw_text(x, y-96, "SequenceFinished = " + string(finishedAttackSequence));
+//draw_text(x, y-128, "State = " + string(state));
+//draw_text(x, y-160, "vSpeed = " + string(vSpeed));
 //draw_text(x, y-192, "vSpeed " + string(vSpeed));
 
 //draw_text(mouse_x, mouse_y-32, "X = " + string(xx));

@@ -1,6 +1,7 @@
 function stateIdle() {
 
 	#region MOVEMENT
+	
 	// Horizontal collision
 	hSpeed = moveSpeed*dir;
 	againstWall = false;
@@ -35,11 +36,19 @@ function stateIdle() {
 		
 	// Goes into jumping state
 	if (key_space_pressed and canJump) {
-		vSpeed = jumpStrength
-		sprite_index = sprPlayerJump;
+		vSpeed = jumpStrength;
+		sprite_index = sprPlayerJumpStart;
 		state = stateJump;
 	}
 	y += vSpeed;
+	
+	#endregion
+	
+	
+	
+	#region ANIMATION
+	
+	//sprite_index = sprPlayerIdle;
 	
 	#endregion
 	
@@ -60,14 +69,9 @@ function stateIdle() {
 	// Attacking
 	else if (mouse_left) {
 		image_index = 0;
+		sprite_index = sprPlayerAttack1;
 		state = stateAttack;
 	}
-	
-	#endregion
-	
-	#region ANIMATION
-	
-	//sprite_index = sprPlayerIdle;
 	
 	#endregion
 }

@@ -61,6 +61,7 @@ function stateWalk() {
 	// Attacking
 	else if (mouse_left) {
 		image_index = 0;
+		sprite_index = sprPlayerAttack1;
 		state = stateAttack;
 	}
 	

@@ -1,5 +1,6 @@
 function stateJump() {
-
+	
+	#region MOVEMENT
 	canJump = false
 	// Horizontal collision
 	hSpeed = moveSpeed*dir;
@@ -27,12 +28,28 @@ function stateJump() {
 		state = stateIdle;
 	}
 	y += vSpeed;
+		
+	#endregion
+		
+	#region STATES
+	// Attacking
+	if (mouse_left and attacks < airAttacksMax) {
+		image_index = 0;
+		state = stateAttack;
+	}
+	
+	#endregion
+	
+	#region ANIMATION
 	
 	// Animation handling
-	if (vSpeed < 0 )
+	if (vSpeed < 0)
 		sprite_index = sprPlayerJumpUp
 	else if (vSpeed > 0) {
 		state = stateFalling;
 		sprite_index = sprPlayerJumpDown
 	}
+	
+	#endregion
+		
 }

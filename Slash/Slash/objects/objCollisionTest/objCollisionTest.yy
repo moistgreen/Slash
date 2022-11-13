@@ -7,7 +7,7 @@
     "path": "sprites/sprSquare32x32TopLeft/sprSquare32x32TopLeft.yy",
   },
   "solid": false,
-  "visible": true,
+  "visible": false,
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,

@@ -42,9 +42,9 @@ function stateFalling() {
 	//}
 	
 	// Attacking
-	if (mouse_left) {
-		//image_index = 0;
-		//state = stateAttack;
+	if (mouse_left and attacks < airAttacksMax) {
+		image_index = 0;
+		state = stateAttack;
 	}
 	
 	#endregion

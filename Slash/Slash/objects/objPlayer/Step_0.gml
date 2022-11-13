@@ -8,3 +8,6 @@ dir = key_right - key_left;
 
 // Run current state
 state()
+
+if (onGround)
+	attacks = 0;
