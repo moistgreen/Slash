@@ -66,18 +66,18 @@ if (image_index >= image_number - 1) {
 	hitList = [];
 }
 
-if (distance_to_object(objPlayer) < 60 and cooldown <= 0 or attacking) {
+if (distance_to_object(objPlayer) <= 60 and cooldown <= 0 or attacking) {
 	
 	attacking = true;
 	
-	cooldown = 120;
+	cooldown = irandom_range(30, 160);
 	sprite_index = sprDemonBossAttack;
 	
 	//if (image_index >= image_number - 1) {
 	//	attacking = false;
 	//}
 
-	var _atkSprCheck = sprDemonBossAttackMask;
+	var _atkSprCheck = sprDemonBossAttack1Mask1;
 	var _atkDmg = 4;
 	
 	//

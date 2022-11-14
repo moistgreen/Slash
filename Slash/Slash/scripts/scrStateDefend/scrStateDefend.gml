@@ -1,7 +1,7 @@
 function stateDefend() {
 	
 	// Death
-	totalDamage = checkDamage();
+	totalDamage = handleDamage();
 	totalDamage = round(totalDamage/2);
 	
 	if(totalDamage >= hitPoints) {

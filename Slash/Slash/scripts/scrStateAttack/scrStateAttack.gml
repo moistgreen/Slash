@@ -1,7 +1,7 @@
 function stateAttack() {
 	
 	// Death
-	totalDamage = checkDamage();
+	totalDamage = handleDamage();
 	if(totalDamage >= hitPoints) {
 		with (instance_create_depth(x, y, -99, objDamagePopUp)) {
 			damage = other.totalDamage;
@@ -34,12 +34,11 @@ function stateAttack() {
 		// Destroys hit check object after use
 		if (instance_exists(objHitCheck)) {
 			//instance_destroy(objHitCheck)
-
 		}
 		
 		// Attack 1
 		if (sprite_index == sprPlayerAttack1)
-			attack(sprPlayerAttack1, 2, 1, 1, 5, 7);
+			attack(sprPlayerAttack1, 4, 1, 1, 5, 7);
 		
 		// Attack 2 combo hint
 		if (sprite_index == sprPlayerAttack1 and image_index >= 5 and image_index <= 7)
@@ -59,12 +58,14 @@ function stateAttack() {
 			
 		//
 		attack(sprPlayerAttack2, 1, 2, 1, 3, 4);
-				
+		if (image_index > 4 and image_index < 5)
+			hitList = [];
+		
 		attack(sprPlayerAttack2, 2, 2, 2, 5, 6);
 				
-		attack(sprPlayerAttack2, 3, 2, 3, 6, 7);
-				
-		attack(sprPlayerAttack2, 4, 2, 4, 7, 8);
+		attack(sprPlayerAttack2, 2, 2, 3, 6, 7);
+
+		attack(sprPlayerAttack2, 2, 2, 4, 7, 8);
 			
 			if (image_index >= image_number -1 or mouse_left and sprite_index == sprPlayerAttack2 and image_index >= 9 and image_index <= 11) {
 				onAttack2 = false;

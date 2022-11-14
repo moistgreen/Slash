@@ -62,7 +62,7 @@ function stateIdle() {
 	}
 	
 	// Death
-	totalDamage = checkDamage();
+	totalDamage = handleDamage();
 	if(totalDamage >= hitPoints) {
 		with (instance_create_depth(x, y, -99, objDamagePopUp)) {
 			damage = other.totalDamage;

@@ -2,10 +2,7 @@
   "resourceType": "GMTileSet",
   "resourceVersion": "1.0",
   "name": "TileSet2",
-  "spriteId": {
-    "name": "Sprite33",
-    "path": "sprites/Sprite33/Sprite33.yy",
-  },
+  "spriteId": null,
   "tileWidth": 32,
   "tileHeight": 32,
   "tilexoff": 0,

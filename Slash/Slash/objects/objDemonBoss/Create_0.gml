@@ -18,7 +18,7 @@ attacking = false;
 cooldown = 0;
 
 // Health
-hitPointsMax = 20;
+hitPointsMax = 100;
 hitPoints = hitPointsMax;
 
 // Booleans
