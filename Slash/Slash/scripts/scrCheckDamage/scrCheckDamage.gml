@@ -2,6 +2,8 @@ function checkDamage() {
 	var _totalDamage = handleDamage();
 	
 	if (hitPoints <= 0) {
-		instance_destroy();	
+		return true;	
 	}
+	else
+		return _totalDamage;
 }

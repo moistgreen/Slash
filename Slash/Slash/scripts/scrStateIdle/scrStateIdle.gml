@@ -28,18 +28,7 @@ function stateIdle() {
 		onGround = true;
 	}
 
-	// Checks if jumping is possible
-	if (!tile_meeting(x, y+vSpeed, LAYER_COLLISION) and onGround)
-		canJump = true;
-	else
-		canJump = false;
-		
-	// Goes into jumping state
-	if (key_space_pressed and canJump) {
-		vSpeed = jumpStrength;
-		sprite_index = sprPlayerJumpStart;
-		state = stateJump;
-	}
+	
 	y += vSpeed;
 	
 	#endregion
@@ -54,30 +43,91 @@ function stateIdle() {
 	
 	#region STATES
 	
+	// Checks if jumping is possible
+	if (!tile_meeting(x, y+vSpeed, LAYER_COLLISION) and onGround)
+		canJump = true;
+	else
+		canJump = false;
+		
+	// Goes into jumping state
+	if (key_space_pressed and canJump) {
+		
+		image_index = 0;
+		sprite_index = sprPlayerJumpStart;
+		if (image_index >= image_number - 1) {
+			vSpeed = jumpStrength;
+			state = stateJump;
+			exit;
+		}
+	}
+	
+	// Death
+	totalDamage = checkDamage();
+	if(totalDamage >= hitPoints) {
+		with (instance_create_depth(x, y, -99, objDamagePopUp)) {
+			damage = other.totalDamage;
+		}
+		sprite_index = sprPlayerDeath;
+		state = stateDeath;
+		exit;
+	}
+	 
+	// Hurt
+	else if (totalDamage > 0) {
+		with (instance_create_depth(x, y, -99, objDamagePopUp)) {
+			damage = other.totalDamage;
+		}
+		hitPoints -= totalDamage;
+		image_index = 0;
+		sprite_index = sprPlayerHurt;
+		state = stateHurt;
+		exit;
+	}
+	
+	// Rolling
+	if (key_shift) {
+		image_index = 0;
+		sprite_index = sprPlayerRoll;
+		hSpeed = rollSpeed*image_xscale;
+		state = stateRoll;
+		exit;
+	}
+	
+	// Defend
+	if (key_control_held) {
+		sprite_index = sprPlayerDefend;
+		state = stateDefend;
+		exit;
+	}
+	
 	// Walking
 	if (hSpeed != 0) {
 		sprite_index = sprPlayerWalk;
 		state = stateWalk;
+		exit;
 	}
 	
 	// Falling
-	else if (!onGround) {
+	if (!onGround) {
 		sprite_index =	sprPlayerJumpDown;
 		state = stateFalling;
+		exit;
 	}
 	
 	// Attacking
-	else if (mouse_left) {
+	if (mouse_left) {
 		image_index = 0;
 		sprite_index = sprPlayerAttack1;
 		state = stateAttack;
+		exit;
 	}
 	
 	// Special
-	else if (mouse_right) {
+	if (mouse_right) {
 		image_index = 0;
 		sprite_index = sprPlayerAttackSpecial;
 		state = stateSpecial;
+		exit;
 	}
 	
 	#endregion

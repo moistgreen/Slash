@@ -25,8 +25,12 @@ function stateFalling() {
 		vSpeed = 0;
 		jumping = false;
 		onGround = true;
-		sprite_index = sprPlayerIdle;
-		state = stateIdle;
+		sprite_index = sprPlayerJumpLand;
+		if (image_index >= image_number - 1) {
+			sprite_index = sprPlayerIdle;
+			state = stateIdle;
+			exit;
+		}
 	}
 		
 	y += vSpeed;

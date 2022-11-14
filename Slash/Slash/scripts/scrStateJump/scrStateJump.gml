@@ -24,8 +24,12 @@ function stateJump() {
 		vSpeed = 0;
 		jumping = false;
 		onGround = true;
-		sprite_index = sprPlayerIdle;
-		state = stateIdle;
+		sprite_index = sprPlayerJumpLand;
+		if (image_index >= image_number - 1) {
+			sprite_index = sprPlayerIdle;
+			state = stateIdle;
+			exit;
+		}
 	}
 	y += vSpeed;
 		
@@ -46,12 +50,19 @@ function stateJump() {
 	if (dir != 0)
 		image_xscale = dir;
 	
-	
-	if (vSpeed < 0)
+	if (vSpeed < 6 and vSpeed > -2) {
+		//image_index = 0;
+		sprite_index = sprPlayerJumpApex;
+	}
+	else if (vSpeed < 0) {
+		//image_index = 0;
 		sprite_index = sprPlayerJumpUp
+	}
 	else if (vSpeed > 0) {
-		state = stateFalling;
+		//image_index = 0;
 		sprite_index = sprPlayerJumpDown
+		state = stateFalling;
+		exit;
 	}
 	
 	#endregion

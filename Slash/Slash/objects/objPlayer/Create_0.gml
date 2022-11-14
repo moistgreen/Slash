@@ -6,9 +6,10 @@ airSpeedModifier = 2;
 airAttacksMax = 1;
 
 // Movement
+rollSpeed = 12;
 vSpeed = 0;
 hSpeed = 0;
-dir = 0;
+dir = 1;
 
 // Attacking
 attacks = 0;
@@ -19,7 +20,7 @@ onAttackAir = false;
 count = 0;
 
 // Health
-hitPointsMax = 10;
+hitPointsMax = 12;
 hitPoints = hitPointsMax;
 
 // Booleans
@@ -34,6 +35,7 @@ hitList = [];
 damageInbox = [];
 
 // Initialize
+toggleInstructions = true;
 
 state = stateIdle;
 
