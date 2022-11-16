@@ -17,7 +17,6 @@ attackDamage = 1;
 onAttack2 = false;
 onAttack3 = false;
 onAttackAir = false;
-count = 0;
 
 // Health
 hitPointsMax = 12;

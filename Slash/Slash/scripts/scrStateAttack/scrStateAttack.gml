@@ -46,6 +46,9 @@ function stateAttack() {
 			onAttack2 = true;
 			hitList = [];
 		}
+		else if (mouse_left) {
+			missed = true;
+		}
 		
 		// Repeats attack 2 for full animation
 		if (onAttack2) {
@@ -59,33 +62,22 @@ function stateAttack() {
 
 		attack(sprPlayerAttack2, 3, 2, 4, 9, 10);
 			
-		/*
-		// 4 Piece wombo combo
-		attack(sprPlayerAttack2, 3, 2, 1, 3, 4);
-		//if (image_index > 4 and image_index < 5)
-		//	hitList = [];
-		
-		attack(sprPlayerAttack2, 3, 2, 2, 5, 6);
-				
-		attack(sprPlayerAttack2, 3, 2, 3, 6, 7);
-
-		attack(sprPlayerAttack2, 3, 2, 4, 7, 8);
-
-		*/
-			
 			//
-			if (finishedAttack or (mouse_left and image_index >= 9 and image_index <= 11))
+			if (finishedAttack or (mouse_left and image_index >= 13 and image_index <= 15))
 				onAttack2 = false;
 		}
 		#endregion
 	
 		#region	ATTACK 3
 		// Switch to attack 3
-		if (mouse_left and sprite_index == sprPlayerAttack2 and image_index >= 9 and image_index <= 11) {
+		if (mouse_left and sprite_index == sprPlayerAttack2 and image_index >= 13 and image_index <= 15) {
 			image_index = 0;
 			sprite_index = sprPlayerAttack3;	
 			onAttack3 = true;
 			hitList = [];
+		}
+		else if (mouse_left) {
+			missed = true;
 		}
 		
 		// Repeats attack 3 for full animation

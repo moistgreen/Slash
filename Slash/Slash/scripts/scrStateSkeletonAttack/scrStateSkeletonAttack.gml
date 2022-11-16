@@ -5,10 +5,8 @@ function stateSkeletonAttack() {
 	// Death
 	totalDamage = handleDamage();
 	if(totalDamage >= hitPoints) {
-		if (!instance_exists(objDamagePopUp)) {
-			with (instance_create_depth(x, y, -99, objDamagePopUp))
-				damage = other.totalDamage;
-		}
+		with (instance_create_depth(x, y, -99, objDamagePopUp))
+			damage = other.totalDamage;
 		hitPoints -= totalDamage;
 		image_index = 0;
 		sprite_index = sprSkeletonDeath

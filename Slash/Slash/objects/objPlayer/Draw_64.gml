@@ -1,5 +1,5 @@
+// Instructions
 draw_set_text_alignment(fa_left_top)
-
 var _topMargin = 128;
 var _leftMargin = 32;
 if (toggleInstructions) {
@@ -11,6 +11,5 @@ if (toggleInstructions) {
 }
 
 // Health bar
-//drawHealthBar(sprHealthBar, hitPoints, hitPointsMax, 32, 32);
 drawNineSlice(,, hitPoints, hitPointsMax, 32, camera_get_view_height(VIEW)*2-64, 32, 32)
 
