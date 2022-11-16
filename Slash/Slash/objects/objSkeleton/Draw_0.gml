@@ -8,7 +8,7 @@ if (distance_to_object(objPlayer) < aggroRange)
 
 draw_set_text_alignment(fa_center_middle)
 //draw_text(x, y-64, "HP = " + string(hitPoints));
-draw_text(x, y -96, "State: " + string(state))
+//draw_text(x, y -96, "State: " + string(state))
 
 
 

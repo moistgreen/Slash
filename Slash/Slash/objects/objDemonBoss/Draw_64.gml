@@ -1,4 +1,3 @@
-
 var _hpBardCellWidth = 8
 var _hpBardCellHeight = 48;
 

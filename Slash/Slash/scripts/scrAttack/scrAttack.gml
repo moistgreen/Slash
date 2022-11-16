@@ -27,6 +27,7 @@ function attack(_atkSpr, _atkDmg, _atkNum, _atkStage, _frame1, _frame2, _obj = "
 					with (_tar) {
 						//show_message(_atkSprCheck)
 						addDamage(_atkDmg);
+						x += _atkDmg*other.image_xscale;
 
 					}
 					array_push(other.hitList, _tar);

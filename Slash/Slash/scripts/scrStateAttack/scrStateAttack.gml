@@ -1,5 +1,7 @@
 function stateAttack() {
 	
+	#region TAKING DAMAGE
+	
 	// Death
 	totalDamage = handleDamage();
 	if(totalDamage >= hitPoints) {
@@ -22,6 +24,8 @@ function stateAttack() {
 		state = stateHurt;
 		exit;
 	}
+	
+	#endregion
 	
 	// Ground attacks
 	if (onGround) {
@@ -57,15 +61,15 @@ function stateAttack() {
 			
 			
 		//
-		attack(sprPlayerAttack2, 1, 2, 1, 3, 4);
+		attack(sprPlayerAttack2, 3, 2, 1, 3, 4);
 		if (image_index > 4 and image_index < 5)
 			hitList = [];
 		
-		attack(sprPlayerAttack2, 2, 2, 2, 5, 6);
+		attack(sprPlayerAttack2, 3, 2, 2, 5, 6);
 				
-		attack(sprPlayerAttack2, 2, 2, 3, 6, 7);
+		attack(sprPlayerAttack2, 3, 2, 3, 6, 7);
 
-		attack(sprPlayerAttack2, 2, 2, 4, 7, 8);
+		attack(sprPlayerAttack2, 3, 2, 4, 7, 8);
 			
 			if (image_index >= image_number -1 or mouse_left and sprite_index == sprPlayerAttack2 and image_index >= 9 and image_index <= 11) {
 				onAttack2 = false;
@@ -85,7 +89,7 @@ function stateAttack() {
 		}
 		
 		if (onAttack3) {
-			attack(sprPlayerAttack3, 4, 3, 1, 4, 5);
+			attack(sprPlayerAttack3, 5, 3, 1, 4, 5);
 			
 			if (image_index >= image_number -1) {
 				onAttack3 = false;

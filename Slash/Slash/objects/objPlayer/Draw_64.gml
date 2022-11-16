@@ -11,6 +11,6 @@ if (toggleInstructions) {
 }
 
 // Health bar
-//drawHealthBar(sprHealthbar, hitPoints, hitPointsMax, 32, 32);
+//drawHealthBar(sprHealthBar, hitPoints, hitPointsMax, 32, 32);
 drawNineSlice(,, hitPoints, hitPointsMax, 32, camera_get_view_height(VIEW)*2-64, 32, 32)
 

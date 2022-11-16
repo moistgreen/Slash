@@ -1,12 +1,12 @@
 function stateSkeletonIdle() {
 
-
 	#region STATES
 	
 	// Countdown for next attack
 	if (cooldown > 0)
 		cooldown--;
-		
+	
+	// Attacks if player is in range
 	if (distance_to_object(objPlayer) <= attackRange and cooldown <= 0) {
 		image_index = 0;
 		sprite_index = sprSkeletonAttack;
