@@ -1,10 +1,11 @@
 function attack(_atkSpr, _atkDmg, _atkNum, _atkStage, _frame1, _frame2, _obj = "Player") {
 
-	sprite_index = _atkSpr;
+	
 	var _atkSprCheck = asset_get_index("spr" + string(_obj) + "Attack" + string(_atkNum) + "Mask" + string(_atkStage))
 	
 	//
 	if (image_index >= _frame1 and image_index <= _frame2) {
+		sprite_index = _atkSpr;
 		if (!instance_exists(objHitCheck)) {
 			instance_create_depth(x, y, 99, objHitCheck);
 		}
@@ -35,5 +36,7 @@ function attack(_atkSpr, _atkDmg, _atkNum, _atkStage, _frame1, _frame2, _obj = "
 			}
 		}
 	}
-	//instance_destroy(objHitCheck);
+	
+	if (image_index > _frame2 and image_index < _frame2 +1)
+		hitList = [];
 }

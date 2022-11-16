@@ -31,23 +31,14 @@ function stateAttack() {
 	if (onGround) {
 		
 		// So we know that our attack sequence finished
-		if (image_index >= image_number-1) {
-			finishedAttackSequence = true;	
-		}
+		if (image_index >= image_number-1)
+			finishedAttack = true;	
 			
-		// Destroys hit check object after use
-		if (instance_exists(objHitCheck)) {
-			//instance_destroy(objHitCheck)
-		}
-		
 		// Attack 1
 		if (sprite_index == sprPlayerAttack1)
 			attack(sprPlayerAttack1, 4, 1, 1, 5, 7);
 		
-		// Attack 2 combo hint
-		if (sprite_index == sprPlayerAttack1 and image_index >= 5 and image_index <= 7)
-			instance_create_depth(x, y - 16, -99, objComboHint)
-		
+		#region ATTACK 2
 		// Switch to attack 2
 		if (mouse_left and sprite_index == sprPlayerAttack1 and image_index >= 5 and image_index <= 7) {
 			image_index = 0;
@@ -59,55 +50,79 @@ function stateAttack() {
 		// Repeats attack 2 for full animation
 		if (onAttack2) {
 			
-			
-		//
+			// 4 Piece wombo combo
 		attack(sprPlayerAttack2, 3, 2, 1, 3, 4);
-		if (image_index > 4 and image_index < 5)
-			hitList = [];
+		
+		attack(sprPlayerAttack2, 3, 2, 2, 5, 6);
+				
+		attack(sprPlayerAttack2, 3, 2, 3, 7, 8);
+
+		attack(sprPlayerAttack2, 3, 2, 4, 9, 10);
+			
+		/*
+		// 4 Piece wombo combo
+		attack(sprPlayerAttack2, 3, 2, 1, 3, 4);
+		//if (image_index > 4 and image_index < 5)
+		//	hitList = [];
 		
 		attack(sprPlayerAttack2, 3, 2, 2, 5, 6);
 				
 		attack(sprPlayerAttack2, 3, 2, 3, 6, 7);
 
 		attack(sprPlayerAttack2, 3, 2, 4, 7, 8);
+
+		*/
 			
-			if (image_index >= image_number -1 or mouse_left and sprite_index == sprPlayerAttack2 and image_index >= 9 and image_index <= 11) {
+			//
+			if (finishedAttack or (mouse_left and image_index >= 9 and image_index <= 11))
 				onAttack2 = false;
-			}
 		}
+		#endregion
 	
-		// Attack 3 combo hint
-		if (sprite_index == sprPlayerAttack2 and image_index >= 10 and image_index <= 12)
-			instance_create_depth(x, y - 16, -99, objComboHint)
-		
+		#region	ATTACK 3
 		// Switch to attack 3
 		if (mouse_left and sprite_index == sprPlayerAttack2 and image_index >= 9 and image_index <= 11) {
 			image_index = 0;
 			sprite_index = sprPlayerAttack3;	
-			hitList = [];
 			onAttack3 = true;
+			hitList = [];
 		}
 		
+		// Repeats attack 3 for full animation
 		if (onAttack3) {
 			attack(sprPlayerAttack3, 5, 3, 1, 4, 5);
-			
-			if (image_index >= image_number -1) {
+			if (finishedAttack)
 				onAttack3 = false;
-			}
 		}
+		#endregion
 	
 		// End attack
-		if (finishedAttackSequence) {
+		if (finishedAttack) {
 			sprite_index = sprPlayerIdle;
-			finishedAttackSequence = false;
+			finishedAttack = false;
 			state = stateIdle;
 			hitList = [];
 			exit;
 		}
+		
+		// Rolling
+		if (key_shift) {
+			hitList = [];
+			onAttack2 = false;
+			onAttack3 = false;
+			image_index = 0;
+			sprite_index = sprPlayerRoll;
+			hSpeed = rollSpeed*image_xscale;
+			state = stateRoll;
+			exit;
+		}
 	}
 	
+	#region AIR ATTACKS
 	// Air attack
 	else if (!onGround) {
+		
+		
 		if (attacks < airAttacksMax) {
 			sprite_index = sprPlayerAttackAir;
 			vSpeed = 0;
@@ -130,4 +145,5 @@ function stateAttack() {
 			exit;
 		}
 	}
+	#endregion
 }	

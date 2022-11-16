@@ -10,6 +10,7 @@ function stateSkeletonAttack() {
 				damage = other.totalDamage;
 		}
 		hitPoints -= totalDamage;
+		image_index = 0;
 		sprite_index = sprSkeletonDeath
 		state = stateSkeletonDeath;
 		exit;

@@ -26,6 +26,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_55E6E18","properties":[],"isDnd":false,"objectId":{"name":"objSkeleton","path":"objects/objSkeleton/objSkeleton.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":2064.0,"y":656.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_B674CF6","properties":[],"isDnd":false,"objectId":{"name":"objSkeleton","path":"objects/objSkeleton/objSkeleton.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1472.0,"y":96.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_63BA9578","properties":[],"isDnd":false,"objectId":{"name":"objDemonBoss","path":"objects/objDemonBoss/objDemonBoss.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1136.0,"y":1824.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_28C0D7C5","properties":[],"isDnd":false,"objectId":{"name":"objTargetDummy","path":"objects/objTargetDummy/objTargetDummy.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":976.0,"y":416.0,},
       ],"visible":true,"depth":200,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":16,"gridY":16,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Collision","tilesetId":{"name":"tileCollision","path":"tilesets/tileCollision/tileCollision.yy",},"x":0,"y":0,"tiles":{"TileDataFormat":1,"SerialiseWidth":79,"SerialiseHeight":63,"TileCompressedData":[
 1,1,-40,-2147483648,1,0,-35,-2147483648,3,1,-2147483648,1,-39,-2147483648,-2,0,-35,-2147483648,3,1,-2147483648,1,-39,-2147483648,-2,0,-35,-2147483648,3,1,-2147483648,1,-39,-2147483648,-2,0,-35,-2147483648,3,1,-2147483648,1,-39,-2147483648,-2,0,-2,-2147483648,-4,1,-29,-2147483648,3,1,-2147483648,1,-39,-2147483648,-2,0,-35,-2147483648,3,1,-2147483648,1,-35,-2147483648,1,0,-3,-2147483648,-3,0,-34,-2147483648,3,1,-2147483648,
@@ -49,6 +50,7 @@
     {"name":"inst_55E6E18","path":"rooms/rmRoom1/rmRoom1.yy",},
     {"name":"inst_B674CF6","path":"rooms/rmRoom1/rmRoom1.yy",},
     {"name":"inst_63BA9578","path":"rooms/rmRoom1/rmRoom1.yy",},
+    {"name":"inst_28C0D7C5","path":"rooms/rmRoom1/rmRoom1.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

@@ -28,7 +28,7 @@ againstWall = false;
 onGround = false;
 jumping = false;
 canJump = false;
-finishedAttackSequence = false;
+finishedAttack = false;
 
 // Arrays
 hitList = [];

@@ -1,5 +1,7 @@
 function stateAttackBACKUP() {
 	
+	#region TAKING DAMAGE
+	
 	// Death
 	totalDamage = handleDamage();
 	if(totalDamage >= hitPoints) {
@@ -23,13 +25,14 @@ function stateAttackBACKUP() {
 		exit;
 	}
 	
+	#endregion
+	
 	// Ground attacks
 	if (onGround) {
 		
 		// So we know that our attack sequence finished
-		if (image_index >= image_number-1) {
-			finishedAttackSequence = true;	
-		}
+		if (image_index >= image_number-1)
+			finishedAttack = true;	
 			
 		// Destroys hit check object after use
 		if (instance_exists(objHitCheck)) {
@@ -93,17 +96,29 @@ function stateAttackBACKUP() {
 		}
 	
 		// End attack
-		if (finishedAttackSequence) {
+		if (finishedAttack) {
 			sprite_index = sprPlayerIdle;
-			finishedAttackSequence = false;
+			finishedAttack = false;
 			state = stateIdle;
 			hitList = [];
+			exit;
+		}
+		// Rolling
+		if (key_shift) {
+			onAttack2 = false;
+			onAttack3 = false;
+			image_index = 0;
+			sprite_index = sprPlayerRoll;
+			hSpeed = rollSpeed*image_xscale;
+			state = stateRoll;
 			exit;
 		}
 	}
 	
 	// Air attack
 	else if (!onGround) {
+		
+		
 		if (attacks < airAttacksMax) {
 			sprite_index = sprPlayerAttackAir;
 			vSpeed = 0;
@@ -126,4 +141,6 @@ function stateAttackBACKUP() {
 			exit;
 		}
 	}
+	
+	
 }	
