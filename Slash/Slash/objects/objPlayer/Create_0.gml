@@ -1,7 +1,7 @@
 // Constants
 grav = 0.4;
 moveSpeed = 8;
-jumpStrength = -12;
+jumpStrength = -9;
 airSpeedModifier = 2;
 airAttacksMax = 1;
 
@@ -9,6 +9,8 @@ airAttacksMax = 1;
 rollSpeed = 12;
 vSpeed = 0;
 hSpeed = 0;
+hSpeedMax = 8;
+accel = 0.05;
 dir = 1;
 
 // Attacking

@@ -5,6 +5,7 @@ function stateIdle() {
 	#region MOVEMENT
 	
 	// Horizontal collision
+	
 	hSpeed = moveSpeed*dir;
 	againstWall = false;
 	if (tile_meeting(x + hSpeed, y, LAYER_COLLISION)) {	

@@ -12,7 +12,9 @@ function stateJump() {
 		hSpeed = 0;
 		againstWall = true;
 	}
-	x += hSpeed/airSpeedModifier;
+	if (!onGround)
+		hSpeed /= airSpeedModifier;
+	x += hSpeed;
 	
 	// Vertical collision
 	vSpeed += grav;
