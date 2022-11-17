@@ -78,6 +78,10 @@ function stateSkeletonWalk() {
 		}
 		hSpeed = 0;
 		againstWall = true;
+		
+		// Jumps
+		vSpeed = -7;
+		exit;
 	}
 	if (!onGround)
 		hSpeed /= airSpeedModifier;

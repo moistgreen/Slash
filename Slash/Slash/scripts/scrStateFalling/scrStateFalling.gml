@@ -11,8 +11,8 @@ function stateFalling() {
 		hSpeed = 0;
 		againstWall = true;
 	}
-	if (!onGround)
-		hSpeed /= airSpeedModifier;
+	//if (!onGround)
+		//hSpeed /= airSpeedModifier;
 	x += hSpeed;
 
 	// Vertical collision

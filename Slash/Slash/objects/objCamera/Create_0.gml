@@ -1,6 +1,6 @@
 //Normal
-view_width = 1920 / 3; // = 640
-view_height = 1080 / 3; // = 360
+view_width = 1920 / 2; // = 640
+view_height = 1080 / 2; // = 360
 
 window_scale = 2;
 

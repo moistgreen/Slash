@@ -1,2 +1,2 @@
 if (keyboard_check_pressed(vk_enter))
-	room_goto(rmRoom1);
+	room_goto(rmRoom2);
