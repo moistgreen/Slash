@@ -5,7 +5,6 @@ function stateIdle() {
 	#region MOVEMENT
 	
 	// Horizontal collision
-	
 	hSpeed = moveSpeed*dir;
 	againstWall = false;
 	if (tile_meeting(x + hSpeed, y, LAYER_COLLISION)) {	
@@ -56,7 +55,6 @@ function stateIdle() {
 		image_index = 0;
 		sprite_index = sprPlayerJumpStart;
 		if (image_index >= image_number - 1) {
-			startY = y;
 			vSpeed = jumpStrength;
 			state = stateJump;
 			exit;

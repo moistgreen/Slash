@@ -63,14 +63,14 @@ function stateAttack() {
 		attack(sprPlayerAttack2, 3, 2, 4, 9, 10);
 			
 			//
-			if (finishedAttack or (mouse_left and image_index >= 11 and image_index <= 15))
+			if (finishedAttack or (mouse_left and image_index >= 13 and image_index <= 15))
 				onAttack2 = false;
 		}
 		#endregion
 	
 		#region	ATTACK 3
 		// Switch to attack 3
-		if (mouse_left and sprite_index == sprPlayerAttack2 and image_index >= 11 and image_index <= 15) {
+		if (mouse_left and sprite_index == sprPlayerAttack2 and image_index >= 13 and image_index <= 15) {
 			image_index = 0;
 			sprite_index = sprPlayerAttack3;	
 			onAttack3 = true;

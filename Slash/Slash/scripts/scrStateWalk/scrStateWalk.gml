@@ -40,9 +40,7 @@ function stateWalk() {
 		
 		image_index = 0;
 		sprite_index = sprPlayerJumpStart;
-		
 		if (image_index >= image_number - 1) {
-			startY = y;
 			vSpeed = jumpStrength;
 			state = stateJump;
 			exit;

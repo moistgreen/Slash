@@ -12,9 +12,7 @@ function stateJump() {
 		hSpeed = 0;
 		againstWall = true;
 	}
-	if (!onGround)
-		hSpeed /= airSpeedModifier;
-	x += hSpeed;
+	x += hSpeed/airSpeedModifier;
 	
 	// Vertical collision
 	vSpeed += grav;
@@ -60,7 +58,7 @@ function stateJump() {
 		//image_index = 0;
 		sprite_index = sprPlayerJumpUp
 	}
-	else if (y > startY) {
+	else if (vSpeed > 0) {
 		//image_index = 0;
 		sprite_index = sprPlayerJumpDown
 		state = stateFalling;
