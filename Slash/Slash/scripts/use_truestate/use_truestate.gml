@@ -47,7 +47,11 @@ function __iTRUE_STATE_LAYER() constructor {
     
     return _newState;      
   }
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> origin/main
 	///@func stateSwitch([stateId = default], [lock = false])
 	stateSwitch = function (_stateId = __iOriginal.id, _lock = false) {
     if(__iSwitchIsLocked) return;

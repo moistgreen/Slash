@@ -61,6 +61,7 @@
     {"id":{"name":"rmRoom2","path":"rooms/rmRoom2/rmRoom2.yy",},"order":2,},
     {"id":{"name":"objCamera","path":"objects/objCamera/objCamera.yy",},"order":0,},
     {"id":{"name":"objDamagePopUp","path":"objects/objDamagePopUp/objDamagePopUp.yy",},"order":0,},
+    {"id":{"name":"use_truestate","path":"scripts/use_truestate/use_truestate.yy",},"order":5,},
     {"id":{"name":"sprPlayerAttack5Mask1","path":"sprites/sprPlayerAttack5Mask1/sprPlayerAttack5Mask1.yy",},"order":0,},
     {"id":{"name":"scrStateIdle","path":"scripts/scrStateIdle/scrStateIdle.yy",},"order":4,},
     {"id":{"name":"scrStateFroze","path":"scripts/scrStateFroze/scrStateFroze.yy",},"order":1,},
