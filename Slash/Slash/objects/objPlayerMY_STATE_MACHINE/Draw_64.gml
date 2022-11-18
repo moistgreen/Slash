@@ -10,8 +10,6 @@ if (toggleInstructions) {
 	draw_text(_leftMargin, _topMargin+128, "PRESS R: RESTART")
 }
 
-behavior.drawHistory(0, 0,,2)
-
 // Health bar
 drawNineSlice(,, hitPoints, hitPointsMax, 32, camera_get_view_height(VIEW)*2-64, 32, 32)
 

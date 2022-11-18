@@ -1,4 +1,4 @@
-function stateJump() {
+function stateJumpA() {
 	
 	#region MOVEMENT
 	canJump = false

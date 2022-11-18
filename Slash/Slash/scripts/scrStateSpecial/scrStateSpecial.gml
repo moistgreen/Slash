@@ -1,4 +1,4 @@
-function stateSpecial() {
+function stateSpecialA() {
 	
 	takeDamage();
 	

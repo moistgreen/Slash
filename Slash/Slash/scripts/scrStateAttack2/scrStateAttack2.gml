@@ -1,4 +1,4 @@
-function stateAttackA() {
+function stateAttackAA() {
 	
 	takeDamage();
 	

@@ -1,4 +1,4 @@
-function stateIdle() {
+function stateIdleA() {
 
 	takeDamage();
 

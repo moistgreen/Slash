@@ -1,4 +1,4 @@
-function stateRoll() {
+function stateRollA() {
 	
 	takeDamage();
 

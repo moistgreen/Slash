@@ -1,4 +1,4 @@
-function stateWalk() {
+function stateWalkA() {
 
 	takeDamage();
 

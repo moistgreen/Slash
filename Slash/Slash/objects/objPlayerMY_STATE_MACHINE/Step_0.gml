@@ -1,5 +1,3 @@
-
-
 // Updates key inputs
 key_right = keyboard_check(ord("D"));
 key_left = keyboard_check(ord("A"));
@@ -12,8 +10,11 @@ mouse_right = mouse_check_button_pressed(mb_right);
 dir = key_right - key_left;
 
 // Run current state
-behavior.event(TrueStateEvent.onStep);
+state()
 
 if (keyboard_check_pressed(ord("H"))) {
 	toggleInstructions = !toggleInstructions;	
 }
+
+if (onGround)
+	attacks = 0;

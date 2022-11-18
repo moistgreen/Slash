@@ -1,4 +1,4 @@
-function stateHurt() {
+function stateHurtA() {
 
 	// Defend
 	if (key_control_held) {

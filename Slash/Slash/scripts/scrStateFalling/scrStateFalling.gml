@@ -1,4 +1,4 @@
-function stateFalling() {
+function stateFallingA() {
 
 	#region MOVEMENT
 	// Horizontal collision

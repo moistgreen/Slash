@@ -1,4 +1,4 @@
-function stateDefend() {
+function stateDefendA() {
 	
 	#region TAKING DAMAGE
 	
