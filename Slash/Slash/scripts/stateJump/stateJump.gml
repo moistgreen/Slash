@@ -10,8 +10,11 @@ function stateJump(_event, _layer) {
 		
 		case TrueStateEvent.onStep:	
 				
+			if (mouse_left)
+				_layer.stateSwitch(State.attackAir);
+				
 			// Change sprite
-			if (behavior.timer >= 2 and behavior.timer < 3)
+			if (_layer.timer >= 2 and _layer.timer < 3)
 				sprite_index = sprPlayerJumpUp
 			else if (vSpeed < 0)
 				sprite_index = sprPlayerJumpUp;
@@ -25,9 +28,8 @@ function stateJump(_event, _layer) {
 			hSpeed = moveSpeed*dir;
 			againstWall = false;
 			if (tile_meeting(x + hSpeed, y, LAYER_COLLISION)) {	
-				while(!tile_meeting(x+sign(hSpeed), y, LAYER_COLLISION)) {
+				while(!tile_meeting(x+sign(hSpeed), y, LAYER_COLLISION))
 					x += sign(hSpeed);	
-				}
 				hSpeed = 0;
 				againstWall = true;
 			}
@@ -38,13 +40,12 @@ function stateJump(_event, _layer) {
 			vSpeed += grav;
 			onGround = false;
 			if (tile_meeting(x, y + vSpeed, LAYER_COLLISION)) {	
-				while(!tile_meeting(x, y+sign(vSpeed), LAYER_COLLISION)) {
+				while(!tile_meeting(x, y+sign(vSpeed), LAYER_COLLISION))
 					y += sign(vSpeed);	
-				}
 				vSpeed = 0;
 				jumping = false;
 				onGround = true;
-				behavior.stateSwitchPrevious();
+				_layer.stateSwitchPrevious();
 				exit;
 			}
 			y += vSpeed;

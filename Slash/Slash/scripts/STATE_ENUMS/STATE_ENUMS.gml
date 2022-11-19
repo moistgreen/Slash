@@ -5,10 +5,11 @@ enum State {
 	fall,
 	roll,
 	special,
-	defend,
+	attackAir,
 	attackA,
 	attackB,
 	attackC,
+	defend,
 	hurt,
 	death
 }

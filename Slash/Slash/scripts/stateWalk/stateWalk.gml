@@ -9,14 +9,26 @@ function stateWalk(_event, _layer) {
 		
 		case TrueStateEvent.onStep:
 			
+			#region STATE SWITCHING
+			takeDamage()
+			// Defend
+			if (key_control_held) _layer.stateSwitch(State.defend);
+			
 			// IDLE
-			if (hSpeed == 0) behavior.stateSwitch(State.idle);
+			if (hSpeed == 0) _layer.stateSwitch(State.idle);
 				
 			// JUMP
-			if (key_space_pressed) behavior.stateSwitch(State.jump);
+			if (key_space_pressed) _layer.stateSwitch(State.jump);
 			
 			// ROLL
-			if (key_shift) behavior.stateSwitch(State.roll);
+			if (key_shift) _layer.stateSwitch(State.roll);
+			
+			// Attack
+			if (mouse_left) _layer.stateSwitch(State.attackA);
+			
+			// Special
+			if (mouse_right) _layer.stateSwitch(State.special);
+			#endregion
 				
 			#region MOVEMENT
 			// Horizontal collision

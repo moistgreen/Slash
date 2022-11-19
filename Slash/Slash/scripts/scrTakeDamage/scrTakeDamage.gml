@@ -5,9 +5,7 @@ function takeDamage() {
 	if(totalDamage >= hitPoints) {
 		with (instance_create_depth(x, y, -99, objDamagePopUp))
 			damage = other.totalDamage;
-			image_index = 0;
-		sprite_index = sprPlayerDeath;
-		state = stateDeath;
+		behavior.stateSwitch(State.death);
 		exit;
 	}
 	 
@@ -16,9 +14,7 @@ function takeDamage() {
 		with (instance_create_depth(x, y, -99, objDamagePopUp))
 			damage = other.totalDamage;
 		hitPoints -= totalDamage;
-		image_index = 0;
-		sprite_index = sprPlayerHurt;
-		state = stateHurt;
+		behavior.stateSwitch(State.hurt);
 		exit;
 	}
 }

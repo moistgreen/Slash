@@ -11,7 +11,7 @@ dir = key_right - key_left;
 
 // Constants
 grav = 0.4;
-moveSpeed = 8;
+moveSpeed = 5;
 jumpStrength = -9;
 airSpeedModifier = 2;
 airAttacksMax = 1;
@@ -20,11 +20,12 @@ airAttacksMax = 1;
 rollSpeed = 12;
 vSpeed = 0;
 hSpeed = 0;
-hSpeedMax = 8;
+hSpeedMax = 6;
 accel = 0.05;
 dir = 1;
 faceDir = 1;
 startY = y;
+canRoll = false;
 
 // Attacking
 attacks = 0;
@@ -32,6 +33,7 @@ attackDamage = 1;
 onAttack2 = false;
 onAttack3 = false;
 onAttackAir = false;
+combo = false;
 
 // Health
 hitPointsMax = 12;
@@ -58,6 +60,14 @@ behavior.addState(State.idle, stateIdle, "Idle");
 behavior.addState(State.walk, stateWalk, "Walk");
 behavior.addState(State.jump, stateJump, "Jump");
 behavior.addState(State.roll, stateRoll, "Roll");
+behavior.addState(State.attackA, stateAttackA, "Attack A");
+behavior.addState(State.attackB, stateAttackB, "Attack B");
+behavior.addState(State.attackC, stateAttackC, "Attack C");
+behavior.addState(State.special, stateSpecial, "Special");
+behavior.addState(State.attackAir, stateAttackAir, "Attack Air");
+behavior.addState(State.hurt, stateHurt, "Hurt");
+behavior.addState(State.death, stateDeath, "Death");
+behavior.addState(State.defend, stateDefend, "Defend");
 
 
 
